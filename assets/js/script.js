@@ -23,7 +23,7 @@ var apiKey = "13f00cd7501485b4015676dd279bd9fe"
 
 function requestApi(city) {
     api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-    forecast = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;     
+    forecast = `https://api.openweathermap.org/data/2.5/forecast/?q=${city}&appid=${apiKey}&units=imperial`;     
     fetchData();
     forcastData();
     
@@ -33,17 +33,6 @@ function fetchData() {
     fetch(api).then(response => response.json()).then(result => cityWeather(result));
 
     
-}
-
-function forcastData() {
-    fetch(forecast).then(response => response.json()).then(result => cityForecast(result))
-    
-}
-
-function cityForecast(data) {
-    
-
-    console.log(data);
 }
 
 function cityWeather(info){
@@ -72,5 +61,29 @@ function cityWeather(info){
     weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${info.weather[0].icon}@2x.png`);
     
 }
+// fetches from the 5 day forecast API
+function forcastData() {
+    fetch(forecast).then(response => response.json()).then(result => cityForecast(result))
+    
+}
+
+function cityForecast(data) {
+    console.log(data);
+    console.log(data.list);
+// for loop creates an index for 5 days because the original response is for every 3 hours
+    var fiveDay = data.list;
+        for(var i=5; i < fiveDay.length; i=i+8){
+       var fiveDayForecast = fiveDay[i];
+       console.log(fiveDayForecast);
+       
+// couldnt figure out how to group the returned result into an ARRAY
+
+}
+}
+    
+
+    
+
+
 
 
