@@ -34,7 +34,7 @@ THEN I am again presented with current and future conditions for that city
 - Unable to deploy forecast information into HTML elements
 ## Screenshots
 
-![]./img/weathermate.gif
+![](./img/weathermate.gif)
 
 ## Repository Link and Deployment
 
