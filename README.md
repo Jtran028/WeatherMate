@@ -37,6 +37,7 @@ THEN I am again presented with current and future conditions for that city
 ![](./assets/img/weathermate.gif)
 
 ## Repository Link and Deployment
-
+- https://github.com/Jtran028/WeatherMate/
+- https://jtran028.github.io/WeatherMate/
 
 
